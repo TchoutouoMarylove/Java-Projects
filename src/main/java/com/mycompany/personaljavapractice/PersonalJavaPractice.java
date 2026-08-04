@@ -101,7 +101,11 @@ this.researchTopic = researchTopic;
 
 }
 
+public void displayStudentInfo(){
+super.displayStudentInfo();
+    System.out.println("research topic: "+ researchTopic);
 
+}
 
 
 }
@@ -111,44 +115,43 @@ public class PersonalJavaPractice {
 
     public static void main(String[] args) {
         System.out.println("=====Student Management Application====");
-        Student student1 = new Student("ST001","Marylove",20,"female",19.5,true);
-        UndergraduateStudent student2 = new UndergraduateStudent("level1",
-        "ST002","Esther",25,"female",18.5,true);
-        PostgraduateStudent student3 = new PostgraduateStudent("Artificial Intelligence",
-        "ST003","Ruth",24,"female",18.68,true);
+       Student [] students = new Student[5];
+        // Student [] = an array can store references of type students
+        students[0] = new Student(
+        "St001",
+        "Esther",
+        26,
+        "Female",
+        19.5,
+        true      
+        );
+     
+        students[1] = new UndergraduateStudent(
+        "Level1",
+        "St001",
+        "Ruth",
+        24,
+        "Female",
+        18.5,
+        true
+        );
         
-        Student student4 = new UndergraduateStudent("Level2","ST004",
-        "Hans",18,"male",12.25,false);//UPCASTING
-        
-        student4.displayStudentInfo();
-        
-        
-//        Student stud2 = new Student("ST002","Isabelle",20,"female",18.5,true);
+         students[2] = new PostgraduateStudent(
+        "Artificial Intelligence",
+        "St001",
+        "Ruth",
+        24,
+        "Female",
+        18.5,
+        true
+        );
 
-           
-//        stud1.displayStudentInfo();
-//        System.out.println("\n");
-//        stud2.displayStudentInfo();
-//        System.out.println("original name: "+ stud1.getName() );
-//        
-//         stud1.setName("hans");
-//        System.out.println("changing name "+ stud1.getName());
-//        
-//        UndergraduateStudent underStudent1 = new UndergraduateStudent("level 1",
-//        "St003",
-//        "Esther",
-//        20,
-//        "female",
-//        19.5,
-//        true);
-//        
-//        underStudent1.displayStudentInfo();
-////        System.out.println(underStudent1.getName());
-////        underStudent1.setName("Queen");
-////         System.out.println(underStudent1.getName());
-//     stud1.displayStudentInfo(true);
-
-
+     for(Student student: students){
+         //NullPointerException
+         if(student!=null){
+         student.displayStudentInfo();
+         System.out.println("----------");}
+     }
 
 
     }
